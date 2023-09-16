@@ -2,6 +2,7 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Vector;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -37,10 +38,27 @@ public class HolaMundoServlet extends HttpServlet {
 			 out.println("<HTML>");
 			 out.println("<HEAD><TITLE>Hola Mundo!</TITLE></HEAD>");
 			 out.println("<BODY>");
-			
+
+			 
+			 Vector listado = (Vector)request.getSession().getAttribute("listado");
+			 if (listado == null){
+			  listado = new Vector();
+			 }
+			 
 			 if ( nombre != null ){
 				 out.println("<br>Hola "+nombre+"<br>");
+				 listado.addElement(nombre);
 			 }
+			 
+			 request.getSession().setAttribute("listado",listado);
+			 
+			 out.println("<br>");
+			 out.println("Contigo, hoy me han visitado:<br>");
+			 for ( int i = 0 ; i < listado.size() ; i++ ){
+			  out.println("<br>"+(String)listado.elementAt(i));
+			 }
+			 out.println("<a href=\"index.html\">volver</a>");
+
 			 
 			 out.println("Bienvenido a mi primera página web!");
 			 out.println("</BODY></HTML>");
