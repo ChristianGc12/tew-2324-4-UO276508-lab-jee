@@ -16,62 +16,62 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "HolaMundoVista", urlPatterns = { "/HolaMundoVista" }) 
 public class HolaMundoVista extends HttpServlet {
 	private static final long serialVersionUID = 2L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public HolaMundoVista() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public HolaMundoVista() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		 String nombre = (String) request.getParameter("NombreUsuario");
-		 
-		 response.setCharacterEncoding("UTF-8");
-		 response.setContentType("text/html");
-		 PrintWriter out = response.getWriter();
-		 out.println("<HTML>");
-		 out.println("<HEAD><TITLE>Hola Mundo!</TITLE></HEAD>");
-		 out.println("<BODY>");
+		String nombre = (String) request.getParameter("NombreUsuario");
 
-		 Integer contador= (Integer) getServletContext().getAttribute("contador");
-		 if ( contador == null ){
-		  contador = new Integer(0);
-		 }
-		 // Establecemos el contador como atributo del context bajo el nombre
-		 // contador. En caso de que ya existiera, sobreescribiría la referencia
-		 // existente con la nueva.
-		 getServletContext().setAttribute("contador",new
-		 Integer(contador.intValue()+1));
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.println("<HTML>");
+		out.println("<HEAD><TITLE>Hola Mundo!</TITLE></HEAD>");
+		out.println("<BODY>");
 
-		 
-		 
-		 Vector listado = (Vector)request.getSession().getAttribute("listado");
-		 if (listado == null){
-		  listado = new Vector();
-		 }
-		 
-		 if ( nombre != null ){
-			 out.println("<br>Hola "+nombre+"<br>");
-			 listado.addElement(nombre);
-		 }
-		 
-		 request.getSession().setAttribute("listado",listado);
-		 
-		 out.println("<br>");
-		 out.println("Contigo, hoy me han visitado:<br>");
-		 out.println("<br><br>" + contador +" visitas <br><br>");
+		Integer contador= (Integer) getServletContext().getAttribute("contador");
+		if ( contador == null ){
+			contador = new Integer(0);
+		}
+		// Establecemos el contador como atributo del context bajo el nombre
+		// contador. En caso de que ya existiera, sobreescribiría la referencia
+		// existente con la nueva.
+		getServletContext().setAttribute("contador",new
+				Integer(contador.intValue()+1));
 
-		 out.println("<a href=\"index.html\">volver</a>");
 
-		 
-		 out.println("Bienvenido a mi primera página web!");
-		 out.println("</BODY></HTML>");
+
+		Vector listado = (Vector)request.getSession().getAttribute("listado");
+		if (listado == null){
+			listado = new Vector();
+		}
+
+		if ( nombre != null ){
+			out.println("<br>Hola "+nombre+"<br>");
+			listado.addElement(nombre);
+		}
+
+		request.getSession().setAttribute("listado",listado);
+
+		out.println("<br>");
+		out.println("Contigo, hoy me han visitado:<br>");
+		out.println("<br><br>" + contador +" visitas <br><br>");
+
+		out.println("<a href=\"index.html\">volver</a>");
+
+
+		out.println("Bienvenido a mi primera página web!");
+		out.println("</BODY></HTML>");
 
 	}
 

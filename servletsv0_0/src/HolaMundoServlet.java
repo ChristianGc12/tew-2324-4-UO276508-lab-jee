@@ -17,23 +17,23 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "HolaMundo", urlPatterns = { "/HolaMundoCordial" }) 
 public class HolaMundoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public HolaMundoServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public HolaMundoServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-				RequestDispatcher dispatcher =
-					getServletContext().getNamedDispatcher("HolaMundoVista");
-				dispatcher.forward(request, response);
+		RequestDispatcher dispatcher =
+				getServletContext().getNamedDispatcher("HolaMundoVista");
+		dispatcher.forward(request, response);
 
 	}
 
