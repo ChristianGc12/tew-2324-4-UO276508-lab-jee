@@ -22,7 +22,7 @@ public class CarritoCompraServlet extends HttpServlet {
     public CarritoCompraServlet() {
         super();
         // TODO Auto-generated constructor stub
-    }
+    } 
  
 	/** 
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)

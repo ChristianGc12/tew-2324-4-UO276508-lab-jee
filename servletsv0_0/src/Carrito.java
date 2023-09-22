@@ -70,7 +70,7 @@ public class Carrito extends HttpServlet {
 		out.println("<br>");
 		out.println("<br>");
 		
-		 
+		  
 		//------------------------------------------------------------------------------------------------------------------------
 		//Comprobamos si existe el objeto "carrito" en sesión.
 		//Si no existe, lo creamos vacío. Será de tipo HashMap
