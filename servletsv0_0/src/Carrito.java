@@ -76,7 +76,7 @@ public class Carrito extends HttpServlet {
 		//Si no existe, lo creamos vacío. Será de tipo HashMap
 		@SuppressWarnings("unchecked");
 		HashMap<String, Integer> carrito = (HashMap<String, Integer>) request.getSession().getAttribute("carrito");
-		if (carrito == null) {
+		if (carrito == null) { 
 			carrito = new HashMap<String, Integer>();
 		}
 
