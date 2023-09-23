@@ -91,4 +91,43 @@ public class BeanAlumnos implements Serializable{
 
 	}
 	
+	
+	public String baja() {
+		try {
+			//aqui se elimina el alumno actual
+			for(int i = 0; i < alumnos.length; i++) {
+				if(alumnos[i].equals(alumno)) {
+					alumnos = eliminarElemento(alumnos, i);
+					return "exito";
+				}
+			}
+			
+		}
+		catch(Exception e){
+			e.printStackTrace();
+			return "error";
+		}
+		return "No existe el usuario";
+	}
+	
+	
+	
+	
+	public static Alumno[] eliminarElemento(Alumno[] vector, int indice) {
+        if (indice >= 0 && indice < vector.length) {
+            Alumno[] nVector = new Alumno[vector.length - 1];
+            int newIndex = 0;
+            for (int i = 0; i < vector.length; i++) {
+                if (i != indice) {
+                    nVector[newIndex] = vector[i];
+                    newIndex++;
+                }
+            }
+            return nVector;
+        } else {
+            return vector; // No se encontró el índice, no se hace ningún cambio
+        }
+    }
+	
+	
 }
