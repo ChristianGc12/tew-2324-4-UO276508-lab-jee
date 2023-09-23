@@ -4,7 +4,7 @@
       xmlns:h="http://java.sun.com/jsf/html"
        xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
-<title>AltaForm</title> 
+<title>EditForm</title> 
 </h:head>
 <h:body>
 
@@ -15,8 +15,9 @@
 		 USERID: <h:inputText value="#{controller.alumno.iduser}"/>
 		 EMAIL: <h:inputText value="#{controller.alumno.email}"/>
 	</h:panelGrid>
-	<h:commandButton value="Salvar" action="#{controller.salva}"/>
+	<h:commandButton value="Editar" action="#{controller.edit}"/>
 </h:form>
+
 
 </h:body>
 </html>
