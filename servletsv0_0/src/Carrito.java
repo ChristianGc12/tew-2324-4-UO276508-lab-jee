@@ -1,6 +1,9 @@
 
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -70,30 +73,7 @@ public class Carrito extends HttpServlet {
 		out.println("<br>");
 		out.println("<br>");
 		
-		  
-		//------------------------------------------------------------------------------------------------------------------------
-		//Comprobamos si existe el objeto "carrito" en sesión.
-		//Si no existe, lo creamos vacío. Será de tipo HashMap
-		@SuppressWarnings("unchecked");
-		HashMap<String, Integer> carrito = (HashMap<String, Integer>) request.getSession().getAttribute("carrito");
-		if (carrito == null) { 
-			carrito = new HashMap<String, Integer>();
-		}
-
-		//Añadimos el producto recibido al carrito de la compra (en caso de que no sea nulo!)
-		String producto = request.getParameter("producto");
-		if (producto != null) {
-			Integer cantidad = (Integer) carrito.get(producto);
-			if (cantidad == null)
-				cantidad = new Integer(1);
-			else
-				cantidad = new Integer(cantidad.intValue() + 1);
-			//Y añadimos el producto al carrito
-			carrito.put(producto, cantidad);
-		}
-		//Añadimos el carrito a la sesión
-		request.getSession().setAttribute("carrito", carrito);
-	
+		 
 		
 	//-----------------------------------------------------------------------------------------------------------------------		
 		
@@ -116,7 +96,25 @@ public class Carrito extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		HashMap<String, Integer> carrito = (HashMap<String, Integer>) request.getSession().getAttribute("carrito");
+		if (carrito == null) { 
+			carrito = new HashMap<String, Integer>();
+		}
+
+		//Añadimos el producto recibido al carrito de la compra (en caso de que no sea nulo!)
+		String producto = request.getParameter("producto");
+		if (producto != null) {
+			Integer cantidad = (Integer) carrito.get(producto);
+			if (cantidad == null)
+				cantidad = new Integer(1);
+			else
+				cantidad = new Integer(cantidad.intValue() + 1);
+			//Y añadimos el producto al carrito
+			carrito.put(producto, cantidad);
+		}
+		//Añadimos el carrito a la sesión
+		request.getSession().setAttribute("carrito", carrito);
+		response.sendRedirect("CarritoCompraServlet");
 	}
 
 }
