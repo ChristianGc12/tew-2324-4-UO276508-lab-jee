@@ -4,7 +4,9 @@ import impl.tew.business.SimpleServicesFactory;
 import impl.tew.persistence.SimplePersistenceFactory;
 
 import com.tew.persistence.PersistenceFactory;
+import com.tew.business.AlumnosService;
 import com.tew.business.ServicesFactory;
+import com.tew.model.Alumno;
 
 /**
  * Esta clase es la que realemente relaciona las interfaces de las capas 
@@ -30,3 +32,4 @@ public class Factories {
 	public static PersistenceFactory persistence = new SimplePersistenceFactory();
 
 }
+
