@@ -1,6 +1,8 @@
 package com.tew.presentation;
 
 import java.io.Serializable;
+import java.util.ResourceBundle;
+
 import javax.faces.bean.*;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
@@ -44,11 +46,15 @@ public class BeanAlumnos implements Serializable{
     iniciaAlumno(null);
   }
   public void iniciaAlumno(ActionEvent event) {
-    alumno.setId(null);
-    alumno.setIduser("IdUser");
-    alumno.setNombre("Nombre");
-    alumno.setApellidos("Apellidos");
-    alumno.setEmail("email@domain.com"); 
+	  FacesContext facesContext = FacesContext.getCurrentInstance();
+	//Obtenemos el archivo de propiedades correspondiente al idioma que
+	//esta seleccionado y que viene envuelto en facesContext
+	ResourceBundle bundle = facesContext.getApplication().getResourceBundle(facesContext, "msgs");
+	alumno.setId(null);
+	alumno.setIduser(bundle.getString("valorDefectoUserId"));
+	alumno.setNombre(bundle.getString("valorDefectoNombre"));
+	alumno.setApellidos(bundle.getString("valorDefectoApellidos"));
+	alumno.setEmail(bundle.getString("valorDefectoCorreo")); 
   }
 public Alumno getAlumno() {
 	return alumno;

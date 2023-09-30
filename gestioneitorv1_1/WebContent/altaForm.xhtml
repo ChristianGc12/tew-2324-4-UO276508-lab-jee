@@ -4,8 +4,11 @@
       xmlns:h="http://java.sun.com/jsf/html"
        xmlns:f="http://java.sun.com/jsf/core"
        xmlns:p="http://primefaces.org/ui">
+
+<f:view locale="#{settings.locale}">
+
 <h:head>
-<title>Cabecera</title> 
+<title>#{msgs.tituloHead}</title> 
 </h:head>
 <h:body>
 
@@ -17,9 +20,11 @@
   USERID:     <h:inputText value="#{controller.alumno.iduser}"/>
   EMAIL:      <h:inputText value="#{controller.alumno.email}"/>
 </h:panelGrid>
-  <h:commandButton value="Salvar" action="#{controller.salva}"/>
+  <h:commandButton value="#{msgs.botonSalvar}" action="#{controller.salva}"/>
 </h:form>
 
+<h:outputLink value="index.xhtml">#{msgs.enlaceCasa}</h:outputLink>
 
 </h:body>
+</f:view>
 </html>

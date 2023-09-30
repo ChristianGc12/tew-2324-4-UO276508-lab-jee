@@ -6,7 +6,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 @ManagedBean
 @SessionScoped
-public class BeanSettings implements Serializable{
+public class settings implements Serializable{
 	private static final long serialVersionUID = 2L;
 	private static final Locale ENGLISH = new Locale("en");
 	private static final Locale SPANISH = new Locale("es");
