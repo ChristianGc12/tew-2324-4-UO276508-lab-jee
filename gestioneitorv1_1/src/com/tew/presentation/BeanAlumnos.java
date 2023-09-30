@@ -21,8 +21,16 @@ public class BeanAlumnos implements Serializable{
   // AltaForm.xhtml se puedan dejar los valores en un objeto existente.
   private Alumno alumno = new Alumno();
   private Alumno[] alumnos = null;
-  
-  
+  @ManagedProperty(value="#{alumno}")
+  private BeanAlumno b_alumno;
+
+  public void setB_alumno(Alumno alumno) {
+	  this.b_alumno = (BeanAlumno) alumno;
+	 }
+	 public BeanAlumno getB_alumno(){
+	  return this.b_alumno;
+	 }
+
 	//Para los errores reutilizando el bean
 	private String mensaje;
 	private String metodo;
