@@ -11,7 +11,7 @@ import javax.faces.event.ActionEvent;
 import com.tew.model.Alumno;
 @ManagedBean
 @SessionScoped
-public class settings implements Serializable{
+public class SettingsBean implements Serializable{
 
 	@ManagedProperty(value="#{alumno}")
 	private BeanAlumno alumno;
