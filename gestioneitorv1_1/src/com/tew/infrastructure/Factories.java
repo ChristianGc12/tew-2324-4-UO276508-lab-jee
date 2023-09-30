@@ -5,6 +5,7 @@ import impl.tew.persistence.SimplePersistenceFactory;
 
 import com.tew.persistence.PersistenceFactory;
 import com.tew.business.ServicesFactory;
+import com.tew.presentation.BeanAlumno;
 
 /**
  * Esta clase es la que realemente relaciona las interfaces de las capas 
@@ -28,5 +29,9 @@ public class Factories {
 
 	public static ServicesFactory services = new SimpleServicesFactory();
 	public static PersistenceFactory persistence = new SimplePersistenceFactory();
+	
+	 // Agrega la factoría BeanAlumnoFactory
+    public static BeanAlumno beanAlumnoFactory = new BeanAlumno();
+
 
 }

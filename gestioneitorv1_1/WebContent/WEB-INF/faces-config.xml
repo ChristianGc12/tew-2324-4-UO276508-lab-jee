@@ -18,14 +18,17 @@
     <managed-bean-name>controller</managed-bean-name>
     <managed-bean-class>com.tew.presentation.BeanAlumnos</managed-bean-class>
     <managed-bean-scope>session</managed-bean-scope>
-    </managed-bean>
+</managed-bean>
     
 <managed-bean>
     <managed-bean-name>settings</managed-bean-name>
     <managed-bean-class>com.tew.presentation.SettingsBean</managed-bean-class>
-    <managed-bean-scope>session</managed-bean-scope>
-    
+    <managed-bean-scope>session</managed-bean-scope>    
 </managed-bean>
+
+
+
+
 
 <navigation-rule>
     <from-view-id>/index.xhtml</from-view-id> 

@@ -23,20 +23,19 @@ public class BeanAlumnos implements Serializable{
 	// AltaForm.xhtml se puedan dejar los valores en un objeto existente.
 
 	private Alumno[] alumnos = null;
-	@ManagedProperty(value="#{alumno}")
-	private BeanAlumno alumno;
 
-	public void setAlumno(Alumno alumno) {
-		this.alumno = (BeanAlumno) alumno;
-	}
-	public BeanAlumno getAlumno(){
-		return this.alumno;
-	}
+	private BeanAlumno alumno;
 
 	//Para los errores reutilizando el bean
 	private String mensaje;
 	private String metodo;
 
+	public BeanAlumno getAlumno() {
+		return alumno;
+	}
+	public void setAlumno(BeanAlumno alumno) {
+		this.alumno = alumno;
+	}
 	public String getMensaje() {
 		return mensaje;
 	}
@@ -84,16 +83,7 @@ public class BeanAlumnos implements Serializable{
 	public void init() {
 		System.out.println("BeanAlumnos - PostConstruct");
 		//Buscamos el alumno en la sesión. Esto es un patrón factoría claramente.
-		alumno = (BeanAlumno)
-				FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get(new
-						String("alumno"));
-		//si no existe lo creamos e inicializamos
-		if (alumno == null) {
-			System.out.println("BeanAlumnos - No existia");
-			alumno = new BeanAlumno();
-			FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put( "alumno",
-					alumno);
-		}
+		alumno = Factories.beanAlumnoFactory;
 	}
 	@PreDestroy
 	public void end() {
