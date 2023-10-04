@@ -30,6 +30,7 @@ public class BeanAlumnos implements Serializable{
 	private String mensaje;
 	private String metodo;
 
+	
 	public BeanAlumno getAlumno() {
 		return alumno;
 	}
