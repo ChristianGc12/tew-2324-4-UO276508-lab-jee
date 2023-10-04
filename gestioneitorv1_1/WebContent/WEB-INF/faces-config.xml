@@ -27,11 +27,8 @@
 </managed-bean>
 
 
-
-
-
 <navigation-rule>
-    <from-view-id>/index.xhtml</from-view-id> 
+    <from-view-id>/*</from-view-id> 
     <navigation-case>
       <from-action>#{controller.listado}</from-action>
       <from-outcome>exito</from-outcome>
