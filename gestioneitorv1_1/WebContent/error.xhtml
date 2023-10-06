@@ -27,9 +27,11 @@
 		</h:form>
 		<h1>ERROR</h1>
 		<br> Ha ocurrido un Error en la solicitud de servicio</br>
-		<p>${errores.getMensaje()}</p>
-		<p>${errores.getMetodo()}</p>
-
+		<h:outputText value="Vista #{BGError.vista_Error}" /><br></br>
+		<h:outputText value="Método: #{BGError.metodo_Error}" /><br></br>
+		<h:outputText value="Clase #{BGError.clase_Error}" /><br></br>
+		<h:outputText value="Error: #{BGError.error_Error}" /><br></br>
+		
 		<h:outputLink value="index.xhtml">#{msgs.enlaceCasa}</h:outputLink>
 	</h:body>
 </f:view>

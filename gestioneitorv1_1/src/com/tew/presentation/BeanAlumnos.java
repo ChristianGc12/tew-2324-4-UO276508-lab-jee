@@ -13,7 +13,8 @@ import com.tew.business.AlumnosService;
 import com.tew.infrastructure.Factories;
 import com.tew.model.Alumno;
 
-@ManagedBean
+
+@ManagedBean(name="alumnos")
 @SessionScoped
 public class BeanAlumnos implements Serializable{
 	private static final long serialVersionUID = 55555L;
@@ -24,8 +25,12 @@ public class BeanAlumnos implements Serializable{
 
 	private Alumno[] alumnos = null;
 
+	@ManagedProperty(value="#{alumno}")
 	private BeanAlumno alumno;
-
+	
+	@ManagedProperty(value="#{BGError}")
+	private BGError bgError;
+	
 	//Para los errores reutilizando el bean
 	private String mensaje;
 	private String metodo;
@@ -84,6 +89,7 @@ public class BeanAlumnos implements Serializable{
 		System.out.println("BeanAlumnos - PostConstruct");
 		//Buscamos el alumno en la sesión. Esto es un patrón factoría claramente.
 		alumno = Factories.beanAlumnoFactory;
+		bgError = Factories.beanErrorFactori;
 	}
 	@PreDestroy
 	public void end() {
@@ -107,14 +113,11 @@ public class BeanAlumnos implements Serializable{
 			if(localError==null) {
 				localError= new ErrorBean();
 			}
-			e.printStackTrace();  
-			this.setMensaje(e.getMessage());
-			this.setMetodo("Listado");
-			//Sacar de la sesion creada el bean de errores
-			localError.setMensaje(e.getMessage());
-			localError.setMetodo("Listado");
-			//Volver a meter el bean de errores, ahora local, de nuevo en la sesion
-			FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("errores", localError);
+
+			bgError.setVista_Error("vista_desde_la_que_se_redirecciono");
+		    bgError.setMetodo_Error("listado");
+		    bgError.setClase_Error("BeanAlumnos");
+		    bgError.setError_Error(e.getMessage()); // O cualquier otra forma de obtener el mensaje de error
 
 			return "error";
 		}
@@ -129,18 +132,12 @@ public class BeanAlumnos implements Serializable{
 			alumno = (BeanAlumno) service.findById(alumno.getId());
 			return "exito";
 		} catch (Exception e) {
-			e.printStackTrace();
-			this.setMensaje(e.getMessage());
-			this.setMetodo("Edit");
-			//Sacar de la sesion creada el bean de errores
-			ErrorBean localError = (ErrorBean)FacesContext.getCurrentInstance().getExternalContext().getRequestMap().get(new String("errores"));
-			if(localError==null) {
-				localError= new ErrorBean();
-			}
-			localError.setMensaje(e.getMessage());
-			localError.setMetodo("Edit");
-			//Volver a meter el bean de errores, ahora local, de nuevo en la sesion
-			FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("errores", localError);
+	
+			bgError.setVista_Error("vista_desde_la_que_se_redirecciono");
+		    bgError.setMetodo_Error("edit");
+		    bgError.setClase_Error("BeanAlumnos");
+		    bgError.setError_Error(e.getMessage()); // O cualquier otra forma de obtener el mensaje de error
+			
 			return "error";
 		}
 	}
@@ -161,18 +158,14 @@ public class BeanAlumnos implements Serializable{
 			alumnos = (Alumno [])service.getAlumnos().toArray(new Alumno[0]);
 			return "exito";
 		} catch (Exception e) {
-			e.printStackTrace();
-			this.setMensaje(e.getMessage());
-			this.setMetodo("Salva");
-			//Sacar de la sesion creada el bean de errores
-			ErrorBean localError = (ErrorBean)FacesContext.getCurrentInstance().getExternalContext().getRequestMap().get(new String("errores"));
-			if(localError==null) {
-				localError= new ErrorBean();
-			}
-			localError.setMensaje(e.getMessage());
-			localError.setMetodo("Salva");
-			//Volver a meter el bean de errores, ahora local, de nuevo en la sesion
-			FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("errores", localError);
+			
+			bgError.setVista_Error("vista_desde_la_que_se_redirecciono");
+		    bgError.setMetodo_Error("salva");
+		    bgError.setClase_Error("BeanAlumnos");
+		    bgError.setError_Error(e.getMessage()); // O cualquier otra forma de obtener el mensaje de error
+			
+			
+			
 			return "error";
 		}
 	}
@@ -191,18 +184,12 @@ public class BeanAlumnos implements Serializable{
 			alumnos = (Alumno [])service.getAlumnos().toArray(new Alumno[0]);
 			return "exito";
 		} catch (Exception e) {
-			e.printStackTrace();
-			this.setMensaje(e.getMessage());
-			this.setMetodo("Baja");
-			//Sacar de la sesion creada el bean de errores
-			ErrorBean localError = (ErrorBean)FacesContext.getCurrentInstance().getExternalContext().getRequestMap().get(new String("errores"));
-			if(localError==null) {
-				localError= new ErrorBean();
-			}
-			localError.setMensaje(e.getMessage());
-			localError.setMetodo("baja");
-			//Volver a meter el bean de errores, ahora local, de nuevo en la sesion
-			FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("errores", localError);
+
+			bgError.setVista_Error("vista_desde_la_que_se_redirecciono");
+		    bgError.setMetodo_Error("baja");
+		    bgError.setClase_Error("BeanAlumnos");
+		    bgError.setError_Error(e.getMessage()); // O cualquier otra forma de obtener el mensaje de error
+			
 			return "error";
 		}
 	}

@@ -5,6 +5,7 @@ import impl.tew.persistence.SimplePersistenceFactory;
 
 import com.tew.persistence.PersistenceFactory;
 import com.tew.business.ServicesFactory;
+import com.tew.presentation.BGError;
 import com.tew.presentation.BeanAlumno;
 
 /**
@@ -32,6 +33,6 @@ public class Factories {
 	
 	 // Agrega la factoría BeanAlumnoFactory
     public static BeanAlumno beanAlumnoFactory = new BeanAlumno();
-
+    public static BGError beanErrorFactori = new BGError();
 
 }
