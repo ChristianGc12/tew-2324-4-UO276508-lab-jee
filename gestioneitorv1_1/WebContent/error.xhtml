@@ -27,10 +27,10 @@
 		</h:form>
 		<h1>ERROR</h1>
 		<br> Ha ocurrido un Error en la solicitud de servicio</br>
-		<h:outputText value="Vista #{BGError.vista_Error}" /><br></br>
-		<h:outputText value="Método: #{BGError.metodo_Error}" /><br></br>
-		<h:outputText value="Clase #{BGError.clase_Error}" /><br></br>
-		<h:outputText value="Error: #{BGError.error_Error}" /><br></br>
+		<h:outputText value="Vista #{controller.bgError.vista_Error}" /><br></br>
+		<h:outputText value="Método: #{controller.bgError.metodo_Error}" /><br></br>
+		<h:outputText value="Clase #{controller.bgError.clase_Error}" /><br></br>
+		<h:outputText value="Error: #{controller.bgError.error_Error}" /><br></br>
 		
 		<h:outputLink value="index.xhtml">#{msgs.enlaceCasa}</h:outputLink>
 	</h:body>

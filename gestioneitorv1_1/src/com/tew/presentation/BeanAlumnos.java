@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.faces.bean.*;
+import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 
@@ -14,7 +15,7 @@ import com.tew.infrastructure.Factories;
 import com.tew.model.Alumno;
 
 
-@ManagedBean(name="alumnos")
+@ManagedBean
 @SessionScoped
 public class BeanAlumnos implements Serializable{
 	private static final long serialVersionUID = 55555L;
@@ -24,13 +25,22 @@ public class BeanAlumnos implements Serializable{
 	// AltaForm.xhtml se puedan dejar los valores en un objeto existente.
 
 	private Alumno[] alumnos = null;
+	
+	@ManagedProperty(value="#{bgError}")
+	private BGError bgError;
 
 	@ManagedProperty(value="#{alumno}")
 	private BeanAlumno alumno;
 	
-	@ManagedProperty(value="#{BGError}")
-	private BGError bgError;
+
 	
+	public BGError getBgError() {
+		return bgError;
+	}
+	public void setBgError(BGError bgError) {
+		this.bgError = bgError;
+	}
+
 	//Para los errores reutilizando el bean
 	private String mensaje;
 	private String metodo;
@@ -114,7 +124,11 @@ public class BeanAlumnos implements Serializable{
 				localError= new ErrorBean();
 			}
 
-			bgError.setVista_Error("vista_desde_la_que_se_redirecciono");
+			FacesContext facesContext = FacesContext.getCurrentInstance();
+			String currentPageViewId = facesContext.getViewRoot().getViewId();
+			String vista = currentPageViewId.substring(currentPageViewId.lastIndexOf("/") + 1);
+			
+			bgError.setVista_Error(vista);
 		    bgError.setMetodo_Error("listado");
 		    bgError.setClase_Error("BeanAlumnos");
 		    bgError.setError_Error(e.getMessage()); // O cualquier otra forma de obtener el mensaje de error
@@ -133,7 +147,11 @@ public class BeanAlumnos implements Serializable{
 			return "exito";
 		} catch (Exception e) {
 	
-			bgError.setVista_Error("vista_desde_la_que_se_redirecciono");
+			FacesContext facesContext = FacesContext.getCurrentInstance();
+			String currentPageViewId = facesContext.getViewRoot().getViewId();
+			String vista = currentPageViewId.substring(currentPageViewId.lastIndexOf("/") + 1);
+			
+			bgError.setVista_Error(vista);
 		    bgError.setMetodo_Error("edit");
 		    bgError.setClase_Error("BeanAlumnos");
 		    bgError.setError_Error(e.getMessage()); // O cualquier otra forma de obtener el mensaje de error
@@ -158,8 +176,11 @@ public class BeanAlumnos implements Serializable{
 			alumnos = (Alumno [])service.getAlumnos().toArray(new Alumno[0]);
 			return "exito";
 		} catch (Exception e) {
+			FacesContext facesContext = FacesContext.getCurrentInstance();
+			String currentPageViewId = facesContext.getViewRoot().getViewId();
+			String vista = currentPageViewId.substring(currentPageViewId.lastIndexOf("/") + 1);
 			
-			bgError.setVista_Error("vista_desde_la_que_se_redirecciono");
+			bgError.setVista_Error(vista);
 		    bgError.setMetodo_Error("salva");
 		    bgError.setClase_Error("BeanAlumnos");
 		    bgError.setError_Error(e.getMessage()); // O cualquier otra forma de obtener el mensaje de error
@@ -185,7 +206,11 @@ public class BeanAlumnos implements Serializable{
 			return "exito";
 		} catch (Exception e) {
 
-			bgError.setVista_Error("vista_desde_la_que_se_redirecciono");
+			FacesContext facesContext = FacesContext.getCurrentInstance();
+			String currentPageViewId = facesContext.getViewRoot().getViewId();
+			String vista = currentPageViewId.substring(currentPageViewId.lastIndexOf("/") + 1);
+			
+			bgError.setVista_Error(vista);
 		    bgError.setMetodo_Error("baja");
 		    bgError.setClase_Error("BeanAlumnos");
 		    bgError.setError_Error(e.getMessage()); // O cualquier otra forma de obtener el mensaje de error

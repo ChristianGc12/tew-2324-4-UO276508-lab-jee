@@ -16,7 +16,6 @@ public class BGError extends Alumno implements Serializable {
 	private String error_Error;
 	
 	
-	
 	public BGError() {
 		this.vista_Error = "vista_Error";
 		this.metodo_Error = "metodo_Error";
@@ -48,14 +47,6 @@ public class BGError extends Alumno implements Serializable {
 		this.error_Error = error_Error;
 	}
 
-
-	
-	
-	
-	
-	
-	
-	
 	
 	
 }
