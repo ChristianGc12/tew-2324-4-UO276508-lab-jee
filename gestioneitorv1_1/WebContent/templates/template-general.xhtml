@@ -32,6 +32,14 @@
 					<p:separator />
 					<p:menuitem value="#{msgs.enlaceAlta}" action="alta"
 						actionListener="#{alumno.iniciaAlumno}" />
+					<p:separator />
+					<p:menuitem value="#{msgs.enlaceRegistroManual}" action="RegistroManual"
+						actionListener="#{registro.inicia}" />
+					<p:separator />
+					<p:menuitem value="#{msgs.enlaceRegistroJSF}" action="RegistroJSF"
+						actionListener="#{registro.inicia}" />
+
+
 				</p:submenu>
 				<f:facet name="options">
 					<h:commandLink value="#{msgs.enlaceIdiomaES}"

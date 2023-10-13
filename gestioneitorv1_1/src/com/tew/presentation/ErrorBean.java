@@ -1,10 +1,12 @@
 package com.tew.presentation;
 
+import java.io.Serializable;
+
 import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.SessionScoped;
 
 @RequestScoped
-public class ErrorBean {
+public class ErrorBean implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
