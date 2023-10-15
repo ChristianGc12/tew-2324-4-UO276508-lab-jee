@@ -6,7 +6,7 @@
 	<p:panelGrid id="Grid" columns="2" cellpadding="5">
   #{msgs.nombre} 
   <h:panelGroup>
-			<p:inputText value="#{alumno.nombre}" required="true"
+			<p:inputText value="#{controller.alumno.nombre}" required="true"
 				requiredMessage="#{msgs.formAlta_nombre_requiredMessage}"
 				validatorMessage="#{msgs.formAlta_nombre_validatorMessage}"
 				id="nombre">
@@ -17,7 +17,7 @@
   
   #{msgs.apellidos} 
   <h:panelGroup>
-			<p:inputText value="#{alumno.apellidos}" required="true"
+			<p:inputText value="#{controller.alumno.apellidos}" required="true"
 				requiredMessage="#{msgs.formAlta_apellidos_requiredMessage}"
 				validatorMessage="#{msgs.formAlta_apellidos_validatorMessage}"
 				id="apellidos">
@@ -28,7 +28,7 @@
   
   #{msgs.userid}
   <h:panelGroup>
-			<p:inputText value="#{alumno.iduser}" required="true"
+			<p:inputText value="#{controller.alumno.iduser}" required="true"
 				requiredMessage="#{msgs.formAlta_iduser_requiredMessage}"
 				validatorMessage="#{msgs.formAlta_iduser_validatorMessage}"
 				id="iduser">
@@ -39,7 +39,7 @@
   
   #{msgs.correo}
   <h:panelGroup>
-			<p:inputText value="#{alumno.email}" required="true"
+			<p:inputText value="#{controller.alumno.email}" required="true"
 				requiredMessage="#{msgs.formAlta_correo_requiredMessage}"
 				validatorMessage="#{msgs.formAlta_correo_validatorMessage}"
 				id="correo">
