@@ -9,12 +9,22 @@
  </ui:define>
 	<ui:define name="cuerpo">
 
-	<h:form id="form">
-	    <p:inputText id="nombreUsuario" value="#{registro.usuario}" />	<br></br>
-	    <p:password id="password" value="#{registro.password}" />	<br></br>
-	    <p:password id="password2" value="#{registro.password2}" match="password"/> <br></br>
-	    <p:commandButton value="Registrar"/>
-	</h:form>
+
+		<h:form id="form">
+			<p>Usuario</p>
+			<p:inputText id="nombreUsuario" value="#{registro.usuario}" />
+			<br></br>
+			<p>Contraseña</p>
+			<p:password id="password" value="#{registro.password}" match="password2" required="true"/>
+			<p:message for="password" />
+			<br></br>
+			<p>Confirmar contraseña</p>
+			<p:password id="password2" value="#{registro.password2}" required="true" requiredMessage="Las contraseñas no coinciden"/>
+			<p:message for="password2" />
+			<br></br>
+			<!-- Mensaje de error se mostrará aquí -->
+			<p:commandButton value="Registrar" />
+		</h:form>
 
 	</ui:define>
 

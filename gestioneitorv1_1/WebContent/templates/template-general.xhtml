@@ -5,7 +5,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
-	
+
 <f:view locale="#{settings.locale}">
 	<h:head>
 		<title>#{msgs.tituloHead}</title>
@@ -33,12 +33,19 @@
 					<p:menuitem value="#{msgs.enlaceAlta}" action="alta"
 						actionListener="#{alumno.iniciaAlumno}" />
 					<p:separator />
-					<p:menuitem value="#{msgs.enlaceRegistroManual}" action="RegistroManual"
-						actionListener="#{registro.inicia}" />
+					<p:menuitem value="#{msgs.enlaceRegistroManual}"
+						action="RegistroManual" actionListener="#{registro.inicia}" />
 					<p:separator />
 					<p:menuitem value="#{msgs.enlaceRegistroJSF}" action="RegistroJSF"
 						actionListener="#{registro.inicia}" />
 
+					<p:submenu style="float:right" label="#{msgs.textoIdioma}"
+						icon="ui-icon-document">
+						<p:menuitem value="#{msgs.enlaceIdiomaES}"
+							actionListener="#{settings.setSpanish}" update="@all" />
+						<p:menuitem value="#{msgs.enlaceIdiomaEN}"
+							actionListener="#{settings.setEnglish}" update="@all" />
+					</p:submenu>
 
 				</p:submenu>
 				<f:facet name="options">
