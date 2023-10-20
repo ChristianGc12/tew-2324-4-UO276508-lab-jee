@@ -17,7 +17,7 @@ import com.tew.model.Alumno;
 @SessionScoped
 public class BeanAlumnos implements Serializable{
 	private static final long serialVersionUID = 55555L;
-	// Se añade este atributo de entidad para recibir el alumno concreto seleccionado 
+	// Se aï¿½ade este atributo de entidad para recibir el alumno concreto seleccionado 
 	// de la tabla o de un formulario. 
 	// Es necesario inicializarlo para que al entrar desde el formulario de 
 	// AltaForm.xhtml se puedan dejar los valores en un objeto existente.
@@ -77,13 +77,13 @@ public class BeanAlumnos implements Serializable{
 
 
 	//Se inicia correctamente el MBean inyectado si JSF lo hubiera crea
-	//y en caso contrario se crea. (hay que tener en cuenta que es un Bean de sesión)
-	//Se usa @PostConstruct, ya que en el contructor no se sabe todavía si el Managed Bean
+	//y en caso contrario se crea. (hay que tener en cuenta que es un Bean de sesiï¿½n)
+	//Se usa @PostConstruct, ya que en el contructor no se sabe todavï¿½a si el Managed Bean
 	//ya estaba construido y en @PostConstruct SI.
 	@PostConstruct
 	public void init() {
 		System.out.println("BeanAlumnos - PostConstruct");
-		//Buscamos el alumno en la sesión. Esto es un patrón factoría claramente.
+		//Buscamos el alumno en la sesiï¿½n. Esto es un patrï¿½n factorï¿½a claramente.
 		alumno = Factories.beanAlumnoFactory;
 	}
 	@PreDestroy
@@ -98,13 +98,13 @@ public class BeanAlumnos implements Serializable{
 		AlumnosService service;
 		try {
 			// Acceso a la implementacion de la capa de negocio 
-			// a través de la factoría
+			// a travï¿½s de la factorï¿½a
 			service = Factories.services.createAlumnosService();
-			// Asi le damos información a toArray para poder hacer el casting a Alumno[]
+			// Asi le damos informaciï¿½n a toArray para poder hacer el casting a Alumno[]
 			alumnos = (Alumno [])service.getAlumnos().toArray(new Alumno[0]);
 			return "exito";
 		} catch (Exception e) {
-			ErrorBean localError = (ErrorBean)FacesContext.getCurrentInstance().getExternalContext().getRequestMap().get(new String("errores"));
+			ErrorBean localError = (ErrorBean)FacesContext.getCurrentInstance().getExternalContext().getRequestMap().get(new String("beanError"));
 			if(localError==null) {
 				localError= new ErrorBean();
 			}
@@ -115,7 +115,7 @@ public class BeanAlumnos implements Serializable{
 			localError.setMensaje(e.getMessage());
 			localError.setMetodo("Listado");
 			//Volver a meter el bean de errores, ahora local, de nuevo en la sesion
-			FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("errores", localError);
+			FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("beanError", localError);
 
 			return "error";
 		}
@@ -124,7 +124,7 @@ public class BeanAlumnos implements Serializable{
 		AlumnosService service;
 		try {
 			// Acceso a la implementacion de la capa de negocio 
-			// a través de la factoría
+			// a travï¿½s de la factorï¿½a
 			service = Factories.services.createAlumnosService();
 			//Recargamos el alumno en la tabla de la base de datos por si hubiera cambios.
 			alumno = (BeanAlumno) service.findById(alumno.getId());
@@ -134,14 +134,14 @@ public class BeanAlumnos implements Serializable{
 			this.setMensaje(e.getMessage());
 			this.setMetodo("Edit");
 			//Sacar de la sesion creada el bean de errores
-			ErrorBean localError = (ErrorBean)FacesContext.getCurrentInstance().getExternalContext().getRequestMap().get(new String("errores"));
+			ErrorBean localError = (ErrorBean)FacesContext.getCurrentInstance().getExternalContext().getRequestMap().get(new String("beanError"));
 			if(localError==null) {
 				localError= new ErrorBean();
 			}
 			localError.setMensaje(e.getMessage());
 			localError.setMetodo("Edit");
 			//Volver a meter el bean de errores, ahora local, de nuevo en la sesion
-			FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("errores", localError);
+			FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("beanError", localError);
 			return "error";
 		}
 	}
@@ -149,9 +149,9 @@ public class BeanAlumnos implements Serializable{
 		AlumnosService service;
 		try {
 			// Acceso a la implementacion de la capa de negocio 
-			// a través de la factoría
+			// a travï¿½s de la factorï¿½a
 			service = Factories.services.createAlumnosService();
-			//Salvamos o actualizamos el alumno segun sea una operacion de alta o de edición
+			//Salvamos o actualizamos el alumno segun sea una operacion de alta o de ediciï¿½n
 			if (alumno.getId() == null) {
 				service.saveAlumno(alumno);
 			}
@@ -166,14 +166,14 @@ public class BeanAlumnos implements Serializable{
 			this.setMensaje(e.getMessage());
 			this.setMetodo("Salva");
 			//Sacar de la sesion creada el bean de errores
-			ErrorBean localError = (ErrorBean)FacesContext.getCurrentInstance().getExternalContext().getRequestMap().get(new String("errores"));
+			ErrorBean localError = (ErrorBean)FacesContext.getCurrentInstance().getExternalContext().getRequestMap().get(new String("beanError"));
 			if(localError==null) {
 				localError= new ErrorBean();
 			}
 			localError.setMensaje(e.getMessage());
 			localError.setMetodo("Salva");
 			//Volver a meter el bean de errores, ahora local, de nuevo en la sesion
-			FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("errores", localError);
+			FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("beanError", localError);
 			return "error";
 		}
 	}
@@ -182,7 +182,7 @@ public class BeanAlumnos implements Serializable{
 		AlumnosService service;
 		try {
 			// Acceso a la implementacion de la capa de negocio 
-			// a través de la factoría
+			// a travï¿½s de la factorï¿½a
 			service = Factories.services.createAlumnosService();
 			//Borramos  el alumno
 			if (alumno.getId() != null) {
@@ -196,14 +196,14 @@ public class BeanAlumnos implements Serializable{
 			this.setMensaje(e.getMessage());
 			this.setMetodo("Baja");
 			//Sacar de la sesion creada el bean de errores
-			ErrorBean localError = (ErrorBean)FacesContext.getCurrentInstance().getExternalContext().getRequestMap().get(new String("errores"));
+			ErrorBean localError = (ErrorBean)FacesContext.getCurrentInstance().getExternalContext().getRequestMap().get(new String("beanError"));
 			if(localError==null) {
 				localError= new ErrorBean();
 			}
 			localError.setMensaje(e.getMessage());
 			localError.setMetodo("baja");
 			//Volver a meter el bean de errores, ahora local, de nuevo en la sesion
-			FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("errores", localError);
+			FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("beanError", localError);
 			return "error";
 		}
 	}

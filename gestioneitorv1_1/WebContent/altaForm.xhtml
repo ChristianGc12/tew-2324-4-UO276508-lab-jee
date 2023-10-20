@@ -13,6 +13,12 @@
 			<ui:include src="/snippets/form-alumno.xhtml" />
 		</h:form>
 
+		<h:panelGroup rendered="#{not empty beanError.metodo}">
+	        <div class="error-box">
+	            <h:outputText value="#{beanError.mensaje}" styleClass="error-message" />	<br></br>
+	            <h:outputText value="#{beanError.metodo}" styleClass="error-message" />		<br></br>
+	        </div>
+	    </h:panelGroup>
 
 	</ui:define>
 	<ui:define name="pie">

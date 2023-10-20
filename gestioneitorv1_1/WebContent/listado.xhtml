@@ -33,9 +33,23 @@
 				</p:column>
 			</p:dataTable>
 		</h:form>
+
+
+		<h:panelGroup rendered="#{not empty beanError.metodo}">
+			<div class="error-box">
+				<h:outputText value="#{beanError.mensaje}"
+					styleClass="error-message" />
+				<br></br>
+				<h:outputText value="#{beanError.metodo}" styleClass="error-message" />
+				<br></br>
+			</div>
+		</h:panelGroup>
+
+
+
 	</ui:define>
 	<ui:define name="pie">
-			<h:form id="form-pie">
+		<h:form id="form-pie">
 			<ui:include src="/snippets/pie-casa.xhtml" />
 		</h:form>
 	</ui:define>
