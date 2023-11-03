@@ -21,7 +21,6 @@ public interface AlumnosServicesRs extends AlumnosService{
 	@PUT
 	@Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	void saveAlumno(Alumno alumno) throws EntityAlreadyExistsException;
-
 	@POST
 	@Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	void updateAlumno(Alumno alumno) throws EntityNotFoundException;
