@@ -1,0 +1,36 @@
+{
+  "apartamentos": [
+    {
+      "id": 1,
+      "nombre": "Apartamento Playa",
+      "ubicacion": "Costa del Sol",
+      "precio": 120,
+      "habitaciones": 2,
+      "baños": 2
+    },
+    {
+      "id": 2,
+      "nombre": "Apartamento en la Ciudad",
+      "ubicacion": "Centro de la ciudad",
+      "precio": 150,
+      "habitaciones": 3,
+      "baños": 1
+    },
+    {
+      "id": 3,
+      "nombre": "Apartamento de Montaña",
+      "ubicacion": "Alpes Suizos",
+      "precio": 180,
+      "habitaciones": 1,
+      "baños": 1
+    },
+    {
+      "id": 4,
+      "nombre": "Apartamento de Lujo",
+      "ubicacion": "Miami Beach",
+      "precio": 300,
+      "habitaciones": 4,
+      "baños": 3
+    }
+  ]
+}
