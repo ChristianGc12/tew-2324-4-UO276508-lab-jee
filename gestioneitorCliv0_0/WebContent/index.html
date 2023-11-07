@@ -31,126 +31,34 @@ Universidad de Oviedo
         <ul>
             <li>Alumnos
                 <ul>
-                    <li><a href="altaAlumno.html">Alta</a></li>
-                    <li><a href="bajaAlumno.html">Baja</a></li>
-                    <li><a href="edicionAlumno.html">Edición</a></li>
-                    <li><a href="listadoAlumnos.html">Listado</a></li>
-                    <li><a href="matricularAsignaturas.html">Matricular Asignaturas</a></li>
-                    <li><a href="desmatricularAsignaturas.html">Quitar Asignaturas</a></li>
+                    <li><a href="altaAlumno.html" target="formulario">Alta</a></li>
+                    <li><a href="bajaAlumno.html" target="formulario">Baja</a></li>
+                    <li><a href="edicionAlumno.html" target="formulario">Edición</a></li>
+                    <li><a href="listado.html" target="formulario">Listado</a></li>
+                    <li><a href="matricularAsignaturas.html" target="formulario">Matricular Asignaturas</a></li>
+                    <li><a href="desmatricularAsignaturas.html" target="formulario">Quitar Asignaturas</a></li>
                 </ul>
             </li>
             <li>Asignaturas
                 <ul>
-                    <li><a href="altaAsignatura.html">Alta</a></li>
-                    <li><a href="bajaAsignatura.html">Baja</a></li>
-                    <li><a href="edicionAsignatura.html">Edición</a></li>
-                    <li><a href="listadoAsignatura.html">Listado</a></li>
+                    <li><a href="altaAsignatura.html target="formulario"">Alta</a></li>
+                    <li><a href="bajaAsignatura.html" target="formulario">Baja</a></li>
+                    <li><a href="edicionAsignatura.html" target="formulario">Edición</a></li>
+                    <li><a href="listadoAsignatura.html" target="formulario">Listado</a></li>
                 </ul>
             </li>
             <li><a href="#">Calificaciones</a></li>
             <li>Sesión
                 <ul>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="logout.html">Logout</a></li>
+                    <li><a href="login.html" target="formulario">Login</a></li>
+                    <li><a href="logout.html" target="formulario">Logout</a></li>
                 </ul>
             </li>
         </ul>
     </nav>
 
-    <!-- Sección Principal de Formularios -->
-    <main>
-        <section>
-            <h1>Login Alumno</h1>
-            <time datetime="2014-09-14">Septiembre 14, 2014</time>
-        </section>
-        <section>
-            <p>Datos para un nuevo alumno:</p>
-            <form id="login" action="#" method="post">
-                <p>
-                    <label for="username">Login:</label>
-                    <input type="text" name="username" id="username" size="25">
-                </p>
-                <p>
-                    <label for="passwd">Contraseña:</label>
-                    <input type="password" name="passwd" id="passwd" size="25">
-                </p>
-                <p>
-                    <input type="submit" name="submit" id="submit" value="Enviar">
-                    <input type="reset" name="reset" id="reset" value="Reiniciar">
-                </p>
-            </form>
-        </section>
-    </main>
-
-    <!-- Elemento Lateral Informativo -->
-    <aside>
-        <h2>Proyecto GestioneitorCli v0.0</h2>
-        <p>En este proyecto de partida para la asignatura se incluyen:</p>
-        <ul>
-            <li>Secciones básicas para estructurar el código de GestioneitorCli en HTML5.</li>
-        </ul>
-    </aside>
-
-    <!-- Elemento Pie de Navegación -->
-    <footer>
-        <ul>
-            <li><a href="#">Casa</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-    </footer>
-</body>
-</html>
-En este código, se han utilizado etiquetas semánticas de HTML5 como <header>, <nav>, <main>, <section>, <time>, <aside>, y <footer> para mejorar la estructura del documento y hacerlo más legible. También se han corregido los atributos href de los enlaces para apuntar a los archivos correspondientes. Esto hará que el código sea más moderno y compatible con las mejores prácticas de HTML5.
-
-
-
-
-
-
-
-	<!-- 
-	***************************************************
-	* SECCION PRINCIPAL DE FORMULARIOS         ********
-	***************************************************
-
-	-->
-  	<main>
-        <section>
-            <h1>Login Alumno</h1>
-            <time datetime="2014-09-14">Septiembre 14, 2014</time>
-        </section>
-        <section>
-            <p>Datos para un nuevo alumno:</p>
-            <form id="login" action="#" method="post">
-                <p>
-                    <label for="username">Login:</label>
-                    <input type="text" name="username" id="username" size="25">
-                </p>
-                <p>
-                    <label for="passwd">Contraseña:</label>
-                    <input type="password" name="passwd" id="passwd" size="25">
-                </p>
-                <p>
-                    <input type="submit" name="submit" id="submit" value="Enviar">
-                    <input type="reset" name="reset" id="reset" value="Reiniciar">
-                </p>
-            </form>
-        </section>
-    </main>
-	
-	<!-- 
-	***************************************************
-	* ELEMENTO LATERAL INFORMATIVO ********************
-	***************************************************
-	-->
-	<aside>
-        <h2>Proyecto GestioneitorCli v0.0</h2>
-        <p>En este proyecto de partida para la asignatura se incluyen:</p>
-        <ul>
-            <li>Secciones básicas para estructurar el código de GestioneitorCli en HTML5.</li>
-        </ul>
-    </aside>
-
+	<iframe name="formulario" src="login.html" width="750px" height="500px"></iframe>
+		
 
 	<!-- 
 	***************************************************
