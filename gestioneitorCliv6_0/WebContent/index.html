@@ -1,0 +1,101 @@
+<!-- 
+***************************************************
+Asignatura: Tecnologías Web
+Titulación: GIITIN
+Autor     : Cabal
+Universidad de Oviedo
+***************************************************
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tecnologias Web</title>
+</head>
+<body>
+	<!-- 
+	***************************************************
+	* CABECERA DE LA PAGINA ***************************
+	***************************************************
+	-->
+	<header>
+		<h1>Tecnologías Web</h1>
+		<!-- 
+	***************************************************
+	* MENU  DINAMICO **********************************
+	***************************************************
+	-->
+		<nav>
+			<ul>
+				<li>Alumnos
+					<ul>
+						<li><a href="altaAlumno.html" target="formulario">Alta</a></li>
+						<li><a href="#bajaAlumno" target="formulario">Baja</a></li>
+						<li><a href="#edicionAlumno">Edicion</a></li>
+						<li><a href="listado.html" target="formulario">Listado</a></li>
+						<li><a href="#matricularAsignaturas">Matricular
+								Asignaturas</a></li>
+						<li><a href="#desmatricularAsignaturas">Quitar
+								Asignaturas</a></li>
+					</ul>
+				</li>
+				<li>Asignaturas
+					<ul>
+						<li><a href="#altaAsignatura">Alta</a></li>
+						<li><a href="#bajaAsignatura">Baja</a></li>
+						<li><a href="#edicionAsignatura">Edicion</a></li>
+						<li><a href="#listadoAsignatura">Listado</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Calificaciones</a></li>
+				<li>Sesión
+					<ul>
+						<li><a href="login.html" target="formulario">Login</a></li>
+						<li><a href="#logout">Logout</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	
+	<!-- 
+	***************************************************
+	* SECCION PRINCIPAL DE FORMULARIOS EXTERNOS********
+	***************************************************
+	-->
+	<iframe name="formulario" src="login.html" height="425px" width="750px"> </iframe> 
+	
+	<!-- 
+	***************************************************
+	* ELEMENTO LATERAL INFORMATIVO ********************
+	***************************************************
+	-->
+	<aside>
+		<header>
+			<h2>Proyecto GestioneitorCli v1.0</h2>
+		</header>
+		<p>En este proyecto se incorpora Bootstrap con las siguientes características:
+		<ol>
+			<li>Uso de estilos básicos de Bootstrap</li>
+			<li>Menu con transiciones simples con opciones y subopciones</li>
+			<li>Uso de layouts</li>
+		</ol>
+		<p>En esta página únicamente se utiliza HTML5
+	</aside>
+	
+	<!-- 
+	***************************************************
+	* ELEMENTO PIE DE NAVEGACION** ********************
+	***************************************************
+	-->
+	<footer>
+		<nav>
+			<ul>
+				<li><a href="#">Casa</a></li>
+				<li><a href="#">Contacto</a></li>
+			</ul>
+		</nav>
+	</footer>
+
+</body>
+</html>
