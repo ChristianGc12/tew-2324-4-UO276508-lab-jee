@@ -40,12 +40,16 @@ function View(){
 		$("#iduser").focus(); // Ponemos el foco en el campo Nombre.
 	}
 
-	this.getIdAlumno = function (celda) {
-		// Implementa la lógica para obtener el ID del alumno seleccionado
-		var fila = $(celda).closest("tr");
-		var idAlumno = fila.find("td:eq(1)").text();
-		return idAlumno;
-	}
+	This.getIdAlumno = function(celda) {
+		// Accedemos a la fila que está por encima de esta celda
+		// (closest('tr'))y despues obtenemos todas las celdas de esa fila
+		// (find('tr')) y
+		// nos quedamos con la segunda (get(1)) que es la contiene el "id" del
+		// alumno.
+		var id_alumno = parseInt(celda.closest('tr').find('td').get(1).innerHTML);
+		return id_alumno;
+		}
+
 
 
 };
