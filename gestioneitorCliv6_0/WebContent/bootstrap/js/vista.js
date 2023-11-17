@@ -30,15 +30,15 @@ function View(){
 	}
 
 
-	this.loadAlumnoInForm = function (alumno) {
-		// Implementa la lógica para cargar los datos del alumno en el formulario
+	this.loadAlumnoInForm = function(alumno) {
+		// Pintamos los datos alumnos sobre el formularios de alta/edición
 		$("#id").val(alumno.id);
 		$("#iduser").val(alumno.iduser);
 		$("#nombre").val(alumno.nombre);
 		$("#apellidos").val(alumno.apellidos);
 		$("#email").val(alumno.email);
-
-	} // PENDIENTE DE IMPLEMENTAR
+		$("#iduser").focus(); // Ponemos el foco en el campo Nombre.
+	}
 
 	this.getIdAlumno = function (celda) {
 		// Implementa la lógica para obtener el ID del alumno seleccionado
