@@ -5,7 +5,7 @@ import impl.tew.business.classes.*;
 
 import java.util.List;
 
-import com.tew.business.AlumnosService;
+import com.tew.business.AlumnosServices;
 import com.tew.business.exception.EntityAlreadyExistsException;
 import com.tew.business.exception.EntityNotFoundException;
 import com.tew.model.Alumno;
@@ -17,7 +17,7 @@ import com.tew.model.Alumno;
  * @author Enrique
  * 
  */
-public class SimpleAlumnosService implements AlumnosService {
+public class SimpleAlumnosService implements AlumnosServices {
 
 	@Override
 	public List<Alumno> getAlumnos() throws Exception{

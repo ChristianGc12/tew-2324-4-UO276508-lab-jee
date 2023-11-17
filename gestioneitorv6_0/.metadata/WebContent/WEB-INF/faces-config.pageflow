@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14468168361820" configfile="/gestioneitorv5_0/WebContent/WEB-INF/faces-config.xml">
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14468168361820" configfile="/gestioneitorv6_0/WebContent/WEB-INF/faces-config.xml">
   <nodes xsi:type="pageflow:PFPage" name="index.xhtml" id="pf14478510189830" referenceLink="//@navigationRule.4/@navigationCase.1/@toViewId|" outlinks="pf14478510189832 pf14478806192450" inlinks="pf14478510189832 pf14478806192451" path="/index.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="*" id="pf14478510189836" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14478806192452 pf14478806192451 pf14478806192453 pf14478806192454 pf14478806192455" path="*"/>
   <nodes xsi:type="pageflow:PFPage" name="restricted/error.xhtml" id="pf14478806192456" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14478806192452" path="/restricted/error.xhtml"/>

@@ -19,7 +19,7 @@ import com.tew.model.Alumno;
  * @author alb
  *
  */
-public interface AlumnosService {
+public interface AlumnosServices {
 
 	List<Alumno> getAlumnos() throws Exception;
 	Alumno findById(Long id) throws EntityNotFoundException;

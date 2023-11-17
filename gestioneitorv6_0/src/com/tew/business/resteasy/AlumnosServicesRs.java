@@ -4,14 +4,14 @@ import java.util.List;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
-import com.tew.business.AlumnosService;
+import com.tew.business.AlumnosServices;
 import com.tew.business.exception.EntityAlreadyExistsException;
 import com.tew.business.exception.EntityNotFoundException;
 import com.tew.model.Alumno;
 
 // URL en la que el web service responderá
 @Path("/AlumnosServicesRs")
-public interface AlumnosServicesRs extends AlumnosService{
+public interface AlumnosServicesRs extends AlumnosServices{
 
    // responde a peticiones GET
    @GET

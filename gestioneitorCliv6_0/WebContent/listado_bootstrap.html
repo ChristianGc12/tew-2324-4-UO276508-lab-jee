@@ -3,7 +3,7 @@
 <head>
 <title>Ejemplo sencillo de web service con RESTEasy</title>
 <script type="text/javascript"
-	src="http://localhost:8080/gestioneitorv5_0/rest-jsapi">
+	src="http://localhost:8080/gestioneitorv6_0/rest-jsapi">
 	
 </script>
 
@@ -12,6 +12,9 @@
 		var alumnos = AlumnosServicesRs.getAlumnos();
 		// Obtener el elemento HTML donde ir dejando el resultado
 		// del servicio
+		
+		console.log("Esta pasando por la funcion");
+		
 		div = document.getElementById("contenido")
 		div.innerHTML = "";
 		for (i in alumnos) {

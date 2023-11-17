@@ -1,3 +1,10 @@
+//Clase que contiene el Modelo de la aplicación.
+function Model(){
+//Lista de alumnos.
+this.tbAlumnos = null;
+};
+
+
 //Carga los datos del servicio sobreescribiendo el dato this.tbAlumnos.
 this.load = function() {
 	this.tbAlumnos = AlumnosServicesRs.getAlumnos();

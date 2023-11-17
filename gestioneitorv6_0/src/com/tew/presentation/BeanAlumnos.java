@@ -8,7 +8,7 @@ import javax.faces.bean.*;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 
-import com.tew.business.AlumnosService;
+import com.tew.business.AlumnosServices;
 import com.tew.infrastructure.Factories;
 import com.tew.model.Alumno;
 
@@ -54,7 +54,7 @@ public class BeanAlumnos implements Serializable{
 	    	 alumno.setEmail(bundle.getString("valorDefectoCorreo"));      
 	       }
 	       public String listado() {
-		       AlumnosService service;
+		       AlumnosServices service;
 				  try {
 				  // Acceso a la implementacion de la capa de negocio 
 					// a trav��s de la factor��a
@@ -71,7 +71,7 @@ public class BeanAlumnos implements Serializable{
 				  
 		 	  }
 	       public String baja(Alumno alumno) {
-		       AlumnosService service;
+		       AlumnosServices service;
 				  try {
 				  // Acceso a la implementacion de la capa de negocio 
 					// a trav��s de la factor��a
@@ -89,7 +89,7 @@ public class BeanAlumnos implements Serializable{
 				  
 		 	  }
 	       public String edit() {
-		       AlumnosService service;
+		       AlumnosServices service;
 				  try {
 				  // Acceso a la implementacion de la capa de negocio 
 					// a trav��s de la factor��a
@@ -106,7 +106,7 @@ public class BeanAlumnos implements Serializable{
 		 	  }
 	       
 	       public String salva() {
-		       AlumnosService service;
+		       AlumnosServices service;
 				  try {
 				  // Acceso a la implementacion de la capa de negocio 
 					// a trav��s de la factor��a
