@@ -50,6 +50,4 @@ function View(){
 		return id_alumno;
 		}
 
-
-
 };
