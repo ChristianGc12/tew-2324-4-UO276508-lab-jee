@@ -8,8 +8,9 @@ import com.tew.business.AlumnosServices;
 import com.tew.business.exception.EntityAlreadyExistsException;
 import com.tew.business.exception.EntityNotFoundException;
 import com.tew.model.Alumno;
+import com.tew.model.AlumnoRequestData;
 
-// URL en la que el web service responderá
+// URL en la que el web service responderï¿½
 @Path("/AlumnosServicesRs")
 public interface AlumnosServicesRs extends AlumnosServices{
 
@@ -20,9 +21,9 @@ public interface AlumnosServicesRs extends AlumnosServices{
 	
    
    @GET
-   // paramentro indicado en la URL, utilizado el método con @PathParam
+   // paramentro indicado en la URL, utilizado el mï¿½todo con @PathParam
    @Path("{id}")
-   // formato en el que los datos se retornan en el método
+   // formato en el que los datos se retornan en el mï¿½todo
    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
    Alumno findById(@PathParam("id") Long id) throws EntityNotFoundException;
 	
@@ -30,16 +31,17 @@ public interface AlumnosServicesRs extends AlumnosServices{
    @DELETE
    // paramentro indicado en la URL
    @Path("{id}")
-   void deleteAlumno(@PathParam("id") Long id) throws EntityNotFoundException;
+   void deleteAlumno(@PathParam("id") Long id, String token) throws EntityNotFoundException, NotAuthorizedException;
 
    // responde a peticiones PUT
    @PUT
    @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-   void saveAlumno(Alumno alumno) throws EntityAlreadyExistsException;
+   void saveAlumno(AlumnoRequestData alumno) throws EntityAlreadyExistsException;
+
 	
    // responde a peticiones POST
    @POST
-   // formato en que los datos se reciben en el método
+   // formato en que los datos se reciben en el mï¿½todo
    @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
    void updateAlumno(Alumno alumno) throws EntityNotFoundException;
 }	

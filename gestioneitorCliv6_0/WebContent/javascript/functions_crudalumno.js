@@ -15,7 +15,14 @@ function Model(){
 	this.add = function(alumno) {
 //		Llamamos al servicio de alta de alumno
 		AlumnosServicesRs.saveAlumno({
-			$entity : alumno,
+			$entity : {
+				id: alumno.id,
+				nombre: alumno.nombre,
+				apellidos: alumno.apellidos,
+				iduser: alumno.iduser,
+				email: alumno.email,
+				token: sessionStorage.getItem("token")
+			} ,
 			$contentType : "application/json"
 		});
 //		Recargamos la lista de alumnos.
@@ -36,7 +43,9 @@ function Model(){
 	this.remove = function(id_alumno) {
 //		Llamamos al servicio de borrado de alumno
 		AlumnosServicesRs.deleteAlumno({
-			id : id_alumno
+			id : id_alumno,
+			$entity: sessionStorage.getItem("token")
+
 		});
 //		Recargamos la lista de alumnos.
 		this.load();
