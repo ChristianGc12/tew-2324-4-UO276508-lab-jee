@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
+import impl.tew.business.LoginServiceRsImpl;
 import impl.tew.business.resteasy.AlumnosServicesRsImpl;
 
 @SuppressWarnings("unchecked")
@@ -14,6 +15,7 @@ public class Application extends javax.ws.rs.core.Application {
 
 	public Application() {
 		classes.add(AlumnosServicesRsImpl.class);
+		classes.add(LoginServiceRsImpl.class);
 	}
  	@Override
 	public Set<Class<?>> getClasses() {
