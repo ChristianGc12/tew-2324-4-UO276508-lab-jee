@@ -7,6 +7,10 @@ function Model() {
 			$entity : user,
 			$contentType : "application/json"});
 	}
+	
+	this.setToken = function(token) {
+		sessionStorage.setItem("token", token);
+	}
 };
 function View() {
 	this.loadUserFromForm = function() {
