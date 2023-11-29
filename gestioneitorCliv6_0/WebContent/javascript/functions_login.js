@@ -1,7 +1,5 @@
 function Model() {
-	this.setToken = function(token) {
-//		TODO: Almacenar el token
-	}
+
 	this.login = function(user) {
 		return LoginServiceRs.login({
 			$entity : user,
@@ -37,6 +35,7 @@ function Controller(varmodel, varview) {
 			console.log(token);
 			if (token == "") {
 //				TODO: Mostrar mensaje de login incorrecto
+				console.log("Login incorrecto");
 			} else {
 				that.model.setToken(token);
 				$("#formulario").attr("data", "crudAlumno.html")

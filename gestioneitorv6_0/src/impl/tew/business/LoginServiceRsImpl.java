@@ -11,7 +11,7 @@ public class LoginServiceRsImpl implements LoginServiceRs{
 	public String login(User user) {
 		if (Factories.services.createLoginService().verify(user.getLogin(), user.getPassword()) != null)
 			return GestorSesion.getInstance().registrarLogin(user.getLogin());
-			return "";
+		return "";
 	}
 
 }
